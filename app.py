@@ -265,33 +265,9 @@ spark = start_spark()
 
 
 # =====================================================
-# SAMPLE DATA
+# DATA (run generate_dataset.py to regenerate)
 # =====================================================
-data = {
-    "order_id": list(range(101, 111)),
-    "city": [
-        "Mysuru", "Bengaluru", "Mysuru", "Mandya",
-        "Bengaluru", "Mandya", "Mysuru", "Bengaluru",
-        "Mandya", "Mysuru"
-    ],
-    "shipping_method": [
-        "Standard", "Express", "Standard", "Express",
-        "Standard", "Standard", "Express", "Standard",
-        "Express", "Standard"
-    ],
-    "expected_date": [
-        "2026-10-20", "2026-10-20", "2026-10-21",
-        "2026-10-21", "2026-10-22", "2026-10-22",
-        "2026-10-23", "2026-10-23", "2026-10-24",
-        "2026-10-24"
-    ],
-    "actual_date": [
-        "2026-10-20", "2026-10-22", "2026-10-23",
-        "2026-10-21", "2026-10-24", "2026-10-25",
-        "2026-10-22", "2026-10-23", "2026-10-27",
-        "2026-10-26"
-    ]
-}
+data = pd.read_csv("delivery_data.csv")
 
 
 @st.cache_data
